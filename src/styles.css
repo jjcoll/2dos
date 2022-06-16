@@ -1,8 +1,175 @@
-html, body {
+* {
   margin: 0;
-  background-color: red;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-img {
-  width: 150px;
+/*
+Dark mode:
+background:#1A1A1A 
+border: #4D4D4D
+text: #FFFFFF
+
+Light mode:
+background: #FFFFFF
+border: #F0F0F0
+text: #000000
+ */
+
+/* Light */
+:root {
+  --background: #FFFFFF;
+  --border: #F0F0F0;
+  --text: #000000;
 }
+
+/* Dark */
+/* :root { */
+/*   --background: #1A1A1A; */
+/*   --border: #4D4D4D; */
+/*   --text: #FFFFFF; */
+/* } */
+
+body {
+  font-size: 20px;
+  color: var(--text);
+  font-family: sans-serif;
+  background-color: var(--background);
+}
+
+input {
+  font-size: 20px;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+input::placeholder {
+  color: #777;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:focus-visible {
+  border-radius: 0px;
+}
+
+.container {
+  padding-top: 200px;
+  width: 800px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.header {
+  width: 90%; 
+  margin: 0 auto;
+  margin-top: 48px;
+}
+
+.theme-icon {
+  font-size: 24px;
+  color: var(--text);
+  /* border: solid 1px var(--text); */
+  padding: 2px;
+  border-radius: 50%;
+}
+
+.theme-icon:hover {
+  cursor: pointer;
+}
+
+.heading-primary {
+  font-size: 32px;
+}
+
+.todo-container {
+  width: 400px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.add-todos {
+  width: 100%;
+}
+
+.add-todo__input {
+  width: 100%;
+  padding: 8px 16px;
+  border: solid 2px var(--border);
+  border-bottom: solid 1px var(--border);
+}
+
+.todo-list {
+  border: solid 2px var(--border);
+  border-top: solid 1px var(--border);
+}
+
+.todo {
+  position: relative;
+  
+  padding: 8px 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.task-name:hover {
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #666;
+}
+
+.completed:hover {
+  cursor: default;
+}
+
+.close-icon {
+  font-size: 22px;
+  border-radius: 50%;
+  padding: 1px;
+
+}
+
+.close-icon:hover {
+  cursor: pointer;
+  /* border: 1px solid #666; */
+  box-shadow: 0 0 0 1px #666 inset;
+}
+
+.list-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: -48px;
+}
+
+.progress {
+  text-align: center;
+}
+
+.filters {
+  
+}
+
+.filter-button {
+  background-color: var(--background);
+  color: var(--text);
+  border: solid 1px var(--border);
+  padding: 4px 8px;
+}
+
+.filter-button:hover {
+  cursor: pointer;
+}
+
+

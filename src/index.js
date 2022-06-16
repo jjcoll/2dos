@@ -1,7 +1,25 @@
 // Importar modulo -- necesito funcion saludar
-import {saludar} from './js/components'
 import './styles.css'
 
-const nombre = 'Fernando';
+const themeBtn = document.querySelector(".theme-icon")
+let theme = "d"
 
-saludar(nombre)
+themeBtn.addEventListener('click', () => {
+  if (theme === "d") {
+    themeBtn.setAttribute("name", "moon-outline")
+    theme = "n"
+    document.documentElement.style.setProperty('--background', '#1A1A1A');
+    document.documentElement.style.setProperty('--border', '#4D4D4D');
+    document.documentElement.style.setProperty('--text', '#FFFFFF');
+  } else {
+    themeBtn.setAttribute("name", "sunny-outline")
+    theme = "d"
+    document.documentElement.style.setProperty('--background', '#FFFFFF');
+    document.documentElement.style.setProperty('--border', '#F0F0F0');
+    document.documentElement.style.setProperty('--text', '#000000');
+  }
+})
+
+const toggleTheme = () => {
+
+};

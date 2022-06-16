@@ -19,6 +19,7 @@ text: #000000
 /* Light */
 :root {
   --background: #FFFFFF;
+  --background-hover : #313131;
   --border: #F0F0F0;
   --text: #000000;
 }
@@ -170,6 +171,7 @@ input:focus-visible {
 
 .filter-button:hover {
   cursor: pointer;
+  background-color: var(--background-hover);
 }
 
 

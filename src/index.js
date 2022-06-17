@@ -1,27 +1,44 @@
-// Importar modulo -- necesito funcion saludar
 import './styles.css'
 
-const themeBtn = document.querySelector(".theme-icon")
-let theme = "d"
+const themes = {
+  dark: [
+    ['--background', '#1A1A1A'],
+    ['--border', '#4D4D4D'],
+    ['--text', '#FFFFFF'],
+    ['--background-hover', '#313131'],
+  ],
+  light: [
+    ['--background', '#FFFFFF'],
+    ['--border', '#F0F0F0'],
+    ['--text', '#000000'],
+    ['--background-hover', '#e6e6e6'],
+  ],
+}
 
-themeBtn.addEventListener('click', () => {
-  if (theme === "d") {
-    themeBtn.setAttribute("name", "moon-outline")
-    theme = "n"
-    document.documentElement.style.setProperty('--background', '#1A1A1A');
-    document.documentElement.style.setProperty('--border', '#4D4D4D');
-    document.documentElement.style.setProperty('--text', '#FFFFFF');
-    document.documentElement.style.setProperty('--background-hover', '#313131');
+let theme = 'light'
+
+const changeTheme = (newTheme) => {
+  for (let i = 0; i < themes[theme].length; i++) { 
+    document.documentElement.style.setProperty(`${themes[newTheme][i][0]}`, `${themes[newTheme][i][1]}`)
+  }
+  theme = newTheme
+}
+
+const dayNightBtn = document.querySelector('.theme-icon')
+
+dayNightBtn.addEventListener('click', () => {
+  if (theme === 'light') {
+    dayNightBtn.setAttribute('name', 'moon-outline')
+    changeTheme("dark")
   } else {
-    themeBtn.setAttribute("name", "sunny-outline")
-    theme = "d"
-    document.documentElement.style.setProperty('--background', '#FFFFFF');
-    document.documentElement.style.setProperty('--border', '#F0F0F0');
-    document.documentElement.style.setProperty('--text', '#000000');
-    document.documentElement.style.setProperty('--background-hover', '#e6e6e6');
+    dayNightBtn.setAttribute('name', 'sunny-outline')
+    changeTheme("light")
   }
 })
 
-const toggleTheme = () => {
 
-};
+
+
+
+
+

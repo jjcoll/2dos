@@ -1,4 +1,26 @@
 import './styles.css'
+// import { Todo } from './js/classes/todo.class.js' 
+// import { TodoList } from './js/classes/todo-list.class.js'
+
+// importar todas las clases
+import {Todo, TodoList} from './js/classes'
+import {crearTodoHtml} from './js/componentes.js'
+
+
+
+export const todoList = new TodoList();
+
+const tarea = new Todo("Aprender Js");
+console.log(tarea)
+
+todoList.newTodo(tarea)
+
+console.log(todoList)
+
+tarea.completed = true;
+crearTodoHtml( tarea )
+
+
 
 const themes = {
   dark: [

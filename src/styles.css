@@ -150,7 +150,8 @@ input:focus-visible {
 .close-icon:hover {
   cursor: pointer;
   /* border: 1px solid #666; */
-  box-shadow: 0 0 0 1px #666 inset;
+  /* box-shadow: 0 0 0 1px #666 inset; */
+  color: #a70000;
 }
 
 .list-footer {

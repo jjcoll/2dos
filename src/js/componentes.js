@@ -8,7 +8,7 @@ const todoInput = document.querySelector('.add-todo__input')
 // crear en HTML todo
 export const crearTodoHtml = (todo) => {
   let html = ` 
-          <p class="task-name ${ (todo.completed) ? "completed" : "" }">${todo.task}</p>
+          <p class="task-name ${ (todo.completed) ? "completed" : "" }" data-id="${todo.id}">${todo.task}</p>
           <ion-icon class="close-icon" name="close-outline"></ion-icon>
         `
 
@@ -25,10 +25,26 @@ export const crearTodoHtml = (todo) => {
 todoInput.addEventListener('keyup', (ev) => {
   if (ev.key === "Enter" && todoInput.value) { // "" es falso en JS 
   
-    console.log("enter pressed")
     const nuevoTodo = new Todo( todoInput.value )
     todoInput.value = ""
     todoList.newTodo( nuevoTodo )
     crearTodoHtml( nuevoTodo )
   }
 })
+
+// Manejar clicks en todo list
+todoListEl.addEventListener('click', (ev) => {
+
+  // Toggle completed and not completed
+  if (ev.target.classList.contains("task-name")) {
+    const todoEl = ev.target
+    const todoId = todoEl.getAttribute("data-id")
+   
+    todoEl.classList.toggle("completed")
+    todoList.toggleTodo(todoId) 
+  } else {
+    console.log("clicked on another place")
+  }
+})
+
+

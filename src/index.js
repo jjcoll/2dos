@@ -6,21 +6,7 @@ import './styles.css'
 import {Todo, TodoList} from './js/classes'
 import {crearTodoHtml} from './js/componentes.js'
 
-
-
 export const todoList = new TodoList();
-
-const tarea = new Todo("Aprender Js");
-console.log(tarea)
-
-todoList.newTodo(tarea)
-
-console.log(todoList)
-
-tarea.completed = true;
-crearTodoHtml( tarea )
-
-
 
 const themes = {
   dark: [

@@ -15,7 +15,15 @@ export class TodoList {
 
   }
 
-  toggleTodo ( id ) {
+  toggleTodo ( id ) {  // marca y desmarca el todo como completado
+    
+    for (const todo of this.todos) {
+
+      if (todo.id == id) {
+        todo.completed = !todo.completed
+        break;
+      }
+    }
 
   }
 

@@ -4,6 +4,7 @@ import {todoList} from '../index.js'
 // Referencias en HTML
 const todoListEl = document.querySelector('.todo-list')
 const todoInput = document.querySelector('.add-todo__input')
+const remveCompletedBtn = document.querySelector("#remove-completed")
 
 // crear en HTML todo
 export const crearTodoHtml = (todo) => {
@@ -49,5 +50,21 @@ todoListEl.addEventListener('click', (ev) => {
     console.log(todoList)
   }
 })
+
+
+// Eliminar todos completados
+
+remveCompletedBtn.addEventListener('click', () => {
+  todoList.deleteCompleted()
+  // tiene que ir al reves para evitar que se rompa 
+  for ( let i = todoListEl.children.length - 1; i >= 0; i-- ) {
+    console.log(todoListEl.children[i].children[0])
+    if (todoListEl.children[i].children[0].classList.contains("completed")) {
+      todoListEl.children[i].remove()
+    }
+  }
+})
+
+
 
 

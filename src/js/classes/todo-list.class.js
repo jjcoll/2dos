@@ -12,7 +12,7 @@ export class TodoList {
   }
   
   removeTodo ( id ) {
-
+    this.todos = this.todos.filter(todo => todo.id != id)
   }
 
   toggleTodo ( id ) {  // marca y desmarca el todo como completado

@@ -42,9 +42,11 @@ todoListEl.addEventListener('click', (ev) => {
   if (todoName === "p") {
     ev.target.classList.toggle("completed")
     todoList.toggleTodo( todoId )
+    console.log(todoList)
   } else if(todoName === "ion-icon") {
     todoElement.remove()
     todoList.removeTodo( todoId )
+    console.log(todoList)
   }
 })
 

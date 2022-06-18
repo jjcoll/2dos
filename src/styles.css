@@ -24,7 +24,7 @@ text: #000000
 /* Light */
 :root {
   --background: #FFFFFF;
-  --background-hover : #313131;
+  --background-hover : #e6e6e6;
   --border: #F0F0F0;
   --text: #000000;
 }
